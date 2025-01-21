@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import Image from '../MyReactNativeApp/src/assets/images/Group.png'
 
-const PasswordChangedScreen = () => {
+const PasswordChangedScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <img src={Image} /> 
@@ -10,7 +10,7 @@ const PasswordChangedScreen = () => {
       <Text style={styles.message}>
         Password changed successfully, you can login again with a new password
       </Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.replace('home')}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
     </View>

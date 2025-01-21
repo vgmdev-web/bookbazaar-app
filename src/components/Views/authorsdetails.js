@@ -2,12 +2,12 @@ import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView, TextInput, FlatList, } from "react-native";
 
 const authors = [
-  { id: '1', name: 'John Freeman', description: 'American writer he was the editor of the', image: require("./src/assets/images/ventor1.png") },
-  { id: '2', name: 'Adam Dalva', description: 'He is the senior fiction editor of guernica ma', image: require("./src/assets/images/ventor5.png") },
-  { id: '3', name: 'Abraham Verghese', description: 'He is the professor and Linda R. Meier and', image: require("./src/assets/images/ventor6.png") },
-  { id: '4', name: 'Tess Gunty', description: 'Gunty was born and raised in South Bend, Indiana', image: require("./src/assets/images/ventor2.png") },
-  { id: '5', name: 'Ann Napolitano', description: 'She is the author of the novels A Good Hard', image: require("./src/assets/images/ventor7.png") },
-  { id: '6', name: 'Hernan Diaz', description: 'Gunty was born and raised in South Bend, Indiana', image: require("./src/assets/images/ventor5.png") },
+  { id: '1', name: 'John Freeman', description: 'American writer he was the editor of the', image: require("../../../src/assests/images/ventor1.png") },
+  { id: '2', name: 'Adam Dalva', description: 'He is the senior fiction editor of guernica ma', image: require("../../../src/assests/images/ventor5.png") },
+  { id: '3', name: 'Abraham Verghese', description: 'He is the professor and Linda R. Meier and', image: require("../../../src/assests/images/ventor6.png") },
+  { id: '4', name: 'Tess Gunty', description: 'Gunty was born and raised in South Bend, Indiana', image: require("../../../src/assests/images/ventor2.png") },
+  { id: '5', name: 'Ann Napolitano', description: 'She is the author of the novels A Good Hard', image: require("../../../src/assests/images/ventor7.png") },
+  { id: '6', name: 'Hernan Diaz', description: 'Gunty was born and raised in South Bend, Indiana', image: require("../../../src/assests/images/ventor5.png") },
 ];
 
 const AuthorsScreen = () => {
@@ -26,7 +26,7 @@ const AuthorsScreen = () => {
       
      <View style={styles.header}>
      <TouchableOpacity>
-          <Image source={require('./src/assets/images/arrow1.png')} style={{ width: 21, height: 21 }} />
+          <Image source={require('../../../src/assests/images/arrow1.png')} style={{ width: 21, height: 21 }} />
           </TouchableOpacity>
           <TouchableOpacity>
         <Text style={styles.title}>Authors</Text></TouchableOpacity>

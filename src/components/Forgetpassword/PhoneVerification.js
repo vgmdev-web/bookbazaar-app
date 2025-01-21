@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-const VerificationCodeScreen = () => {
+const VerificationCodeScreen = ({ navigation }) => {
   
   const [code, setCode] = useState(['', '', '', '']); // For 4-digit OTP
 
@@ -71,7 +71,7 @@ const VerificationCodeScreen = () => {
           // Add logic to verify code here
         }}
       >
-        <Text style={styles.continueButtonText}>Continue</Text>
+        <Text style={styles.continueButtonText} onPress={() => navigation.replace('newpassword')}>Continue</Text>
       </TouchableOpacity>
     </View>
   );

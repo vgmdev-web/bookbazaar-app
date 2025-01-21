@@ -13,13 +13,13 @@ const ProductDetails = () => {
     <View style={styles.container}>
       {/* Product Image */}
       <View style={styles.productImage}>
-             <Image source={require('./src/assets/images/book.png')} />
+             <Image source={require('../../../src/assests/images/book.png')} />
            </View>
 
       {/* Product Title */}
       <Text style={styles.productTitle}>The Kite Runner</Text>
 
-      <Image source={require('./src/assets/images/vn4.png')} style={{ width: 81, height: 31, marginBottom: 5, marginTop: 5,}} />
+      <Image source={require('../../../src/assests/images/vn4.png')} style={{ width: 81, height: 31, marginBottom: 5, marginTop: 5,}} />
       
 
       {/* Product Description */}

@@ -8,9 +8,9 @@ import {
 } from 'react-native';
 
 
-const VerificationCodeScreen = () => {
-  
-  const [code, setCode] = useState(['', '', '', '']); // For 4-digit OTP
+const VerificationCodeScreen = ({ navigation }) => {
+
+  const [code, setCode] = useState(['', '', '', '']);
 
   const handleCodeChange = (value, index) => {
     const newCode = [...code];
@@ -23,11 +23,11 @@ const VerificationCodeScreen = () => {
     }
   };
 
-  const inputs = []; // To track input refs for auto-navigation
+  const inputs = [];
 
   return (
     <View style={styles.container}>
-      {/* Back Button */}
+
       <TouchableOpacity
         style={styles.backButton}
         onPress={() => navigation.goBack()}
@@ -35,19 +35,19 @@ const VerificationCodeScreen = () => {
         <Text style={styles.arrowText}>←</Text>
       </TouchableOpacity>
 
-      {/* Title and Subtitle */}
+
       <Text style={styles.title}>Verification </Text>
       <Text style={styles.subtitle}>
         Please enter the code we just sent to phone number
       </Text>
       <Text style={styles.email}>(+965) 123 435 7565</Text>
 
-      {/* Code Input Fields */}
+
       <View style={styles.codeContainer}>
         {code.map((digit, index) => (
           <TextInput
             key={index}
-            ref={(ref) => (inputs[index] = ref)} // Store input refs
+            ref={(ref) => (inputs[index] = ref)}
             style={styles.codeInput}
             keyboardType="numeric"
             maxLength={1}
@@ -57,21 +57,21 @@ const VerificationCodeScreen = () => {
         ))}
       </View>
 
-      {/* Resend Text */}
+
       <Text style={styles.resendText}>
         If you didn’t receive a code?{' '}
         <Text style={styles.resendLink}>Resend</Text>
       </Text>
 
-      {/* Continue Button */}
+
       <TouchableOpacity
         style={styles.continueButton}
         onPress={() => {
           console.log(`Entered Code: ${code.join('')}`);
-          // Add logic to verify code here
+
         }}
       >
-        <Text style={styles.continueButtonText}>Continue</Text>
+        <Text style={styles.continueButtonText} onPress={() => navigation.replace('Sucess')}>Continue</Text>
       </TouchableOpacity>
     </View>
   );

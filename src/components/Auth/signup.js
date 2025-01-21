@@ -11,22 +11,22 @@ import {
 } from 'react-native';
 
 
-export default function App() {
+const App = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
       <Image
-                      source={require('./src/assets/images/arrow1.png')}
-                      style={{ width: 21, height: 21, marginBottom: 14, marginTop: 3  }} 
-                    />
+        source={require('../../../src/assests/images/arrow1.png')}
+        style={{ width: 21, height: 21, marginBottom: 14, marginTop: 3 }}
+      />
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Sign Up</Text>
         <Text style={styles.subHeaderText}>Create account and choose fevorite menu</Text>
       </View>
 
       <View style={styles.inputContainer}>
-      <Text style={styles.Text1}>Name</Text>
+        <Text style={styles.Text1}>Name</Text>
         <TextInput
           style={styles.input}
           placeholder="Your Name"
@@ -49,35 +49,35 @@ export default function App() {
             secureTextEntry={!passwordVisible}
           />
           <Image
-                    source={require('./src/assets/images/Password.png')}
-                    style={{ width: 20, height: 20, marginRight: 10 }} 
-                  />
+            source={require('../../../src/assests/images/Password.png')}
+            style={{ width: 20, height: 20, marginRight: 10 }}
+          />
           <TouchableOpacity
             onPress={() => setPasswordVisible(!passwordVisible)}
             style={styles.eyeIcon}
           >
-           
+
           </TouchableOpacity>
         </View>
-        
+
       </View>
 
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={() => navigation.replace('Verification')}>
         <Text style={styles.loginButtonText}>Register</Text>
       </TouchableOpacity>
 
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>Have an account?</Text>
         <TouchableOpacity>
-          <Text style={styles.signUpText}>Sign In</Text>
-          
+          <Text style={styles.signUpText} onPress={() => navigation.replace('login')}>Sign In</Text>
+
         </TouchableOpacity>
       </View>
 
       <Text style={styles.orText}>By clicking Register, you agree to our</Text>
       <Text style={styles.orText1}>Terms and Data Policy.</Text>
 
-     
+
     </SafeAreaView>
   );
 }
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
   },
   socialButtonsContainer: {
     alignItems: 'center',
-    
+
   },
   socialButton: {
     height: 50,
@@ -200,3 +200,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default App;

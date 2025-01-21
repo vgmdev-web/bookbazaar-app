@@ -29,7 +29,7 @@ const App = ({ navigation }) => {
         >
           <Text style={styles.buttonText1}>Continue</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.signInButton}>
+        <TouchableOpacity style={styles.signInButton} onPress={() => navigation.replace('login')}>
           <Text style={styles.buttonText}>Sign in</Text>
         </TouchableOpacity>
       </View>

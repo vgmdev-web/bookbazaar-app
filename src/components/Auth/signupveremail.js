@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 
-const EmailVerificationScreen = () => {
+const EmailVerificationScreen = ({ navigation }) => {
   const [code, setCode] = useState(['', '', '', '']);
 
   const handleCodeChange = (value, index) => {
@@ -9,7 +9,7 @@ const EmailVerificationScreen = () => {
     newCode[index] = value;
     setCode(newCode);
 
-    // Automatically move to the next input if a value is entered
+
     if (value && index < 3) {
       const nextInput = inputs[index + 1];
       nextInput?.focus();
@@ -36,7 +36,7 @@ const EmailVerificationScreen = () => {
       </TouchableOpacity>
       <Text style={styles.title}>Verification Email</Text>
       <Text style={styles.subtitle}>
-        Please enter the code we just sent to email {'\n'} 
+        Please enter the code we just sent to email {'\n'}
         <Text style={styles.email}>Johndoe@gmail.com</Text>
       </Text>
 
@@ -53,14 +53,14 @@ const EmailVerificationScreen = () => {
           />
         ))}
       </View>
-<View style={styles.footerContainer}>
+      <View style={styles.footerContainer}>
         <Text style={styles.footerText}>If you didn't recevied a code?</Text>
-      <TouchableOpacity onPress={() => Alert.alert('Resend Code')} style={styles.resendButton}>
-        <Text style={styles.resendText}> Resend</Text>
-      </TouchableOpacity>
-</View>
-      <TouchableOpacity onPress={handleContinue} style={styles.continueButton}>
-        <Text style={styles.continueText}>Continue</Text>
+        <TouchableOpacity onPress={() => Alert.alert('Resend Code')} style={styles.resendButton}>
+          <Text style={styles.resendText}> Resend</Text>
+        </TouchableOpacity>
+      </View>
+      <TouchableOpacity onPress={handleContinue} style={styles.continueButton} >
+        <Text style={styles.continueText} onPress={() => navigation.replace('verificationphone')}>Continue</Text>
       </TouchableOpacity>
     </View>
   );
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     padding: 20,
- 
+
     alignItems: 'center',
   },
   title: {
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
   email: {
     color: '#000',
     fontWeight: '600',
-   
+
   },
   codeContainer: {
     flexDirection: 'row',

@@ -10,12 +10,12 @@ import {
   Image,
 } from "react-native";
 
-export default function App() {
+const App = ({ navigation }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  // Password validation criteria
+
   const hasMinLength = password.length >= 8;
   const hasNumber = /\d/.test(password);
   const hasLetter = /[a-zA-Z]/.test(password);
@@ -23,9 +23,9 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <Image
-                            source={require('./src/assets/images/arrow1.png')}
-                            style={{ width: 21, height: 21, marginBottom: 14, marginTop: 3  }} 
-                          />
+        source={require('../../../src/assests/images/arrow1.png')}
+        style={{ width: 21, height: 21, marginBottom: 14, marginTop: 3 }}
+      />
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Sign Up</Text>
         <Text style={styles.subHeaderText}>
@@ -34,7 +34,7 @@ export default function App() {
       </View>
 
       <View style={styles.inputContainer}>
-        {/* Name Field */}
+
         <Text style={styles.label}>Name</Text>
         <TextInput
           style={styles.input}
@@ -44,7 +44,7 @@ export default function App() {
           onChangeText={setName}
         />
 
-        {/* Email Field */}
+
         <Text style={styles.label}>Email</Text>
         <TextInput
           style={styles.input}
@@ -55,15 +55,15 @@ export default function App() {
           onChangeText={setEmail}
         />
 
-        {/* Password Field */}
+
         <Text style={styles.label}>Password</Text>
         <TextInput
           style={[
             styles.input,
             password.length > 0 &&
-              (hasMinLength && hasNumber && hasLetter
-                ? styles.validInput
-                : styles.invalidInput),
+            (hasMinLength && hasNumber && hasLetter
+              ? styles.validInput
+              : styles.invalidInput),
           ]}
           placeholder="Enter your password"
           placeholderTextColor="#ccc"
@@ -72,7 +72,7 @@ export default function App() {
           onChangeText={setPassword}
         />
 
-        {/* Password Validation */}
+
         <View style={styles.validationContainer}>
           <Text
             style={[
@@ -101,23 +101,23 @@ export default function App() {
         </View>
       </View>
 
-      {/* Register Button */}
-      <TouchableOpacity style={styles.registerButton}>
+
+      <TouchableOpacity style={styles.registerButton} onPress={() => navigation.replace('Verification')}>
         <Text style={styles.registerButtonText}>Register</Text>
       </TouchableOpacity>
 
-      {/* Footer */}
+
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>Have an account? </Text>
         <TouchableOpacity>
-          <Text style={styles.signInText}>Sign In</Text>
+          <Text style={styles.signInText} onPress={() => navigation.replace('login')}>Sign In</Text>
         </TouchableOpacity>
       </View>
 
       <Text style={styles.orText}>By clicking Register, you agree to our</Text>
-        <Text style={styles.orText1}>Terms Data Policy.</Text>
-      
-     
+      <Text style={styles.orText1}>Terms Data Policy.</Text>
+
+
     </SafeAreaView>
   );
 }
@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     color: "#53AE44",
     fontWeight: "bold",
   },
- orText: {
+  orText: {
     textAlign: "center",
     color: "#666",
     fontSize: 14,
@@ -226,3 +226,4 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+export default App;

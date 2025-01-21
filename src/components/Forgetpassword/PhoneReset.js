@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-const ResetPasswordScreen = () => {
+const ResetPasswordScreen = ({ navigation }) => {
   
   const [email, setEmail] = useState('');
 
@@ -41,7 +41,7 @@ const ResetPasswordScreen = () => {
       />
 
       
-      <TouchableOpacity style={styles.sendButton}>
+      <TouchableOpacity style={styles.sendButton} onPress={() => navigation.replace('mobileverification')}>
         <Text style={styles.sendButtonText}>Send</Text>
       </TouchableOpacity>
     </View>

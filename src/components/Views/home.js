@@ -6,25 +6,25 @@ const books = [
     id: "1",
     title: "The Kite Runner",
     price: "$14.99",
-    image: require("./src/assets/images/book4.png"),
+    image: require("../../../src/assests/images/book4.png"),
   },
   {
     id: "2",
     title: "The Subtle Art of Not Giving a F*ck",
     price: "$20.99",
-    image: require("./src/assets/images/book5.png"),
+    image: require("../../../src/assests/images/book5.png"),
   },
   {
     id: "3",
     title: "The Art of War",
     price: "$14.99",
-    image: require("./src/assets/images/book8.png"),
+    image: require("../../../src/assests/images/book8.png"),
   },
   {
     id: "4",
     title: "The Art of War",
     price: "$15.99",
-    image: require("./src/assets/images/book7.png"),
+    image: require("../../../src/assests/images/book7.png"),
   },
 ];
 
@@ -32,22 +32,22 @@ const vendors = [
   {
     id: "1",
     name: "Warehouse Stationary",
-    image: require("./src/assets/images/Group1.png"),
+    image: require("../../../src/assests/images/Group1.png"),
   },
   {
     id: "2",
     name: "Furrow by Sendy",
-    image: require("./src/assets/images/Group2.png"),
+    image: require("../../../src/assests/images/Group2.png"),
   },
   {
     id: "3",
     name: "Good Day",
-    image: require("./src/assets/images/Group3.png"),
+    image: require("../../../src/assests/images/Group3.png"),
   },
   {
     id: "4",
     name: "Crane & Co.",
-    image: require("./src/assets/images/Group4.png"),
+    image: require("../../../src/assests/images/Group4.png"),
   },
 ];
 
@@ -56,29 +56,29 @@ const authors = [
     id: "1",
     title: "John Freedom",
     price: "writer",
-    image: require("./src/assets/images/ventor1.png"),
+    image: require("../../../src/assests/images/ventor1.png"),
   },
   {
     id: "2",
     title: "Tess Gunty",
     price: "Novelist",
-    image: require("./src/assets/images/ventor2.png"),
+    image: require("../../../src/assests/images/ventor2.png"),
   },
   {
     id: "3",
     title: "Richard",
     price: "writer",
-    image: require("./src/assets/images/ventor3.png"),
+    image: require("../../../src/assests/images/ventor3.png"),
   },
   {
     id: "4",
     title: "Tess Gunty",
     price: "Novelist",
-    image: require("./src/assets/images/ventor4.png"),
+    image: require("../../../src/assests/images/ventor4.png"),
   },
 ];
 
-const App = () => {
+const App = ({ navigation }) => {
   const renderBookItem = ({ item }) => (
     <View style={styles.bookCard}>
        <Image source={item.image} style={styles.vendorImage} />
@@ -130,14 +130,14 @@ const App = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.offerImage}>
-        <Image source={require('./src/assets/images/Image.png')} /></View>
+        <Image source={require('../../../src/assests/images/Image.png')} /></View>
       </View>
 
       {/* Top of Week Section */}
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>Top of Week</Text>
         <TouchableOpacity>
-          <Text style={styles.seeAll}>See all</Text>
+          <Text style={styles.seeAll} onPress={() => navigation.replace('catagery')}>See all</Text>
         </TouchableOpacity>
       </View>
       <FlatList
@@ -152,7 +152,7 @@ const App = () => {
       <View style={styles.sectionHeader1}>
         <Text style={styles.sectionTitle}>Best Vendors</Text>
         <TouchableOpacity>
-          <Text style={styles.seeAll}>See all</Text>
+          <Text style={styles.seeAll} onPress={() => navigation.replace('vendor')}>See all</Text>
         </TouchableOpacity>
       </View>
       
@@ -166,7 +166,7 @@ const App = () => {
       <View style={styles.sectionHeader2}>
         <Text style={styles.sectionTitle}>Authors</Text>
         <TouchableOpacity>
-          <Text style={styles.seeAll}>See all</Text>
+          <Text style={styles.seeAll} onPress={() => navigation.replace('authorsdetails')}>See all</Text>
         </TouchableOpacity>
       </View>
       <FlatList

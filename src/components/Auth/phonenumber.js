@@ -9,12 +9,12 @@ import {
 
 
 const ResetPasswordScreen = () => {
-  
+
   const [email, setEmail] = useState('');
 
   return (
     <View style={styles.container}>
-      
+
       <TouchableOpacity
         style={styles.backButton}
         onPress={() => navigation.goBack()}
@@ -22,13 +22,13 @@ const ResetPasswordScreen = () => {
         <Text style={styles.arrowText}>←</Text>
       </TouchableOpacity>
 
-      
+
       <Text style={styles.title}>Phone Number</Text>
       <Text style={styles.subtitle}>
         Please enter your Phone Number, so we can more easily deliver your order
       </Text>
 
-     
+
       <Text style={styles.label}>Phone Number</Text>
       <TextInput
         style={styles.input}
@@ -40,7 +40,7 @@ const ResetPasswordScreen = () => {
         autoCapitalize="none"
       />
 
-      
+
       <TouchableOpacity style={styles.sendButton}>
         <Text style={styles.sendButtonText}>Continue</Text>
       </TouchableOpacity>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 60, 
+    marginTop: 60,
     marginBottom: 10,
   },
   subtitle: {
