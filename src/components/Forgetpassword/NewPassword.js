@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
 
-const NewPasswordScreen = () => {
+const NewPasswordScreen = ({ navigation }) => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -38,7 +38,7 @@ const NewPasswordScreen = () => {
           onChangeText={setNewPassword}
         />
         <Image 
-          source={require('./src/assets/images/hidden.png')} 
+          source={require('../../../src/assests/images/hidden.png')} 
           style={styles.visibilityIcon}
         />
       </View>
@@ -52,7 +52,7 @@ const NewPasswordScreen = () => {
           onChangeText={setConfirmPassword}
         />
         <Image 
-          source={require('./src/assets/images/hidden.png')} 
+          source={require('../../../src/assests/images/hidden.png')} 
           style={styles.visibilityIcon}
         />
       </View>

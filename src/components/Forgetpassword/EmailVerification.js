@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 
-const VerificationCodeScreen = () => {
+const VerificationCodeScreen = ({ navigation }) => {
   
   const [code, setCode] = useState(['', '', '', '']); 
 
@@ -71,7 +71,7 @@ const VerificationCodeScreen = () => {
           
         }}
       >
-        <Text style={styles.continueButtonText}>Continue</Text>
+        <Text style={styles.continueButtonText} onPress={() => navigation.replace('reset')}>Continue</Text>
       </TouchableOpacity>
     </View>
   );

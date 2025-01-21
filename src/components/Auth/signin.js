@@ -11,15 +11,13 @@ import {
 } from 'react-native';
 
 
-export default function App() {
+const App = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image
-                      source={require('./src/assets/images/arrow1.png')}
-                      style={{ width: 21, height: 21, marginBottom: 14, marginTop: 3  }} 
-                    />
+      <Image source={require('../../../src/assests/images/arrow1.png')}
+                      style={{ width: 21, height: 21, marginBottom: 14, marginTop: 3  }} />
       <View style={styles.headerContainer}>
         <Text style={styles.headerText}>Welcome Back 👋</Text>
         <Text style={styles.subHeaderText}>Sign to your account</Text>
@@ -42,7 +40,7 @@ export default function App() {
             secureTextEntry={!passwordVisible}
           />
           <Image
-                    source={require('./src/assets/images/Password.png')}
+                    source={require('../../../src/assests/images/Password.png')}
                     style={{ width: 20, height: 20, marginRight: 10 }} 
                   />
           <TouchableOpacity
@@ -53,18 +51,18 @@ export default function App() {
           </TouchableOpacity>
         </View>
         <TouchableOpacity>
-          <Text style={styles.forgotPassword}>Forgot Password?</Text>
+          <Text style={styles.forgotPassword} onPress={() => navigation.replace('forget')}>Forgot Password?</Text>
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.loginButton}>
+      <TouchableOpacity style={styles.loginButton} onPress={() => navigation.replace('home')}>
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
 
       <View style={styles.footerContainer}>
         <Text style={styles.footerText}>Don't have an account? </Text>
         <TouchableOpacity>
-          <Text style={styles.signUpText}>Sign Up</Text>
+          <Text style={styles.signUpText} onPress={() => navigation.replace('register')}>Sign Up</Text>
         </TouchableOpacity>
       </View>
 
@@ -73,14 +71,14 @@ export default function App() {
       <View style={styles.socialButtonsContainer}>
         <TouchableOpacity style={styles.socialButton}>
         <Image
-                    source={require('./src/assets/images/Google.png')}
+                    source={require('../../../src/assests/images/Google.png')}
                     style={{ width: 15, height: 15, marginRight: 10 }} 
                   />
           <Text style={styles.socialButtonText}>Sign in with Google</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.socialButton}>
         <Image
-                    source={require('./src/assets/images/Apple.png')}
+                    source={require('../../../src/assests/images/Apple.png')}
                     style={{ width: 15, height: 15, marginRight: 10 }} 
                   />
           <Text style={styles.socialButtonText}>Sign in with Apple</Text>
@@ -203,3 +201,5 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
 });
+
+export default App;

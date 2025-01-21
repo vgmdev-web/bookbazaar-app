@@ -5,55 +5,55 @@ const vendors = [
   {
     id: "1",
     name: "Wattpad",
-     image: require("./src/assets/images/vn1.png"),
+     image: require("../../../src/assests/images/vn1.png"),
     rating: 4,
   },
   {
     id: "2",
     name: "Kuromi",
-     image: require("./src/assets/images/vn2.png"),
+     image: require("../../../src/assests/images/vn2.png"),
     rating: 5,
   },
   {
     id: "3",
     name: "Crane & Co.",
-    image: require("./src/assets/images/vn3.png"),
+    image: require("../../../src/assests/images/vn3.png"),
     rating: 4,
   },
   {
     id: "4",
     name: "GoodDay",
-    image: require("./src/assets/images/vn4.png"),
+    image: require("../../../src/assests/images/vn4.png"),
     rating: 5,
   },
   {
     id: "5",
     name: "Warehouse",
-    image: require("./src/assets/images/vn5.png"),
+    image: require("../../../src/assests/images/vn5.png"),
     rating: 3,
   },
   {
     id: "6",
     name: "Peppa Pig",
-    image: require("./src/assets/images/vn6.png"),
+    image: require("../../../src/assests/images/vn6.png"),
     rating: 5,
   },
   {
     id: "7",
     name: "Jstor",
-    image: require("./src/assets/images/vn7.png"),
+    image: require("../../../src/assests/images/vn7.png"),
     rating: 4,
   },
   {
     id: "8",
     name: "Peloton",
-    image: require("./src/assets/images/vn8.png"),
+    image: require("../../../src/assests/images/vn8.png"),
     rating: 4,
   },
   {
     id: "9",
     name: "Haymarket",
-    image: require("./src/assets/images/vn9.png"),
+    image: require("../../../src/assests/images/vn9.png"),
     rating: 5,
   },
 ];
@@ -78,7 +78,7 @@ const App = () => {
       
      <View style={styles.header}>
      <TouchableOpacity>
-          <Image source={require('./src/assets/images/arrow1.png')} style={{ width: 21, height: 21 }} />
+          <Image source={require('../../../src/assests/images/arrow1.png')} style={{ width: 21, height: 21 }} />
           </TouchableOpacity>
           <TouchableOpacity>
         <Text style={styles.title}>Vendords</Text></TouchableOpacity>

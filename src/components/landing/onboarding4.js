@@ -5,7 +5,7 @@ const onboarding4 = ({ navigation }) => {
   return (
     <View style={styles.container}>
       
-      <TouchableOpacity style={styles.skipButton} onPress={() => navigation.replace('onboarding3')}>
+      <TouchableOpacity style={styles.skipButton} onPress={() => navigation.replace('login')}>
         <Text style={styles.skipText} >Skip</Text>
       </TouchableOpacity>
 
@@ -23,10 +23,10 @@ const onboarding4 = ({ navigation }) => {
 
      
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.continueButton}>
+        <TouchableOpacity style={styles.continueButton} onPress={() => navigation.navigate('login')}>
           <Text style={styles.buttonText1}>Get Started</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.signInButton}>
+        <TouchableOpacity style={styles.signInButton} onPress={() => navigation.replace('login')}>
           <Text style={styles.buttonText}>Sign in</Text>
         </TouchableOpacity>
       </View>

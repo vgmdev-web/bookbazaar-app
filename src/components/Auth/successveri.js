@@ -1,23 +1,23 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
-const CongratulationsScreen = () => {
+const CongratulationsScreen = ({ navigation }) => {
   const handleGetStarted = () => {
-    // Handle navigation or action for the "Get Started" button
+
     alert('Get Started clicked!');
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-              <Image source={require('./src/assets/images/Group.png')} />
-            </View>
+        <Image source={require('../../../src/assests/images/Group.png')} />
+      </View>
       <Text style={styles.title}>Congratulation!</Text>
       <Text style={styles.subtitle}>
         Your account is complete, please enjoy the best menu from us.
       </Text>
       <TouchableOpacity style={styles.button} onPress={handleGetStarted}>
-        <Text style={styles.buttonText}>Get Started</Text>
+        <Text style={styles.buttonText} onPress={() => navigation.replace('home')}>Get Started</Text>
       </TouchableOpacity>
     </View>
   );

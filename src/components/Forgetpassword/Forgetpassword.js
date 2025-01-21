@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 
-const ForgotPasswordScreen = () => {
+const ForgotPasswordScreen = ({ navigation }) => {
   const [selectedOption, setSelectedOption] = useState('Email'); // Default selection
 
   return (
@@ -45,7 +45,7 @@ const ForgotPasswordScreen = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.continueButton}>
+      <TouchableOpacity style={styles.continueButton} onPress={() => navigation.replace('reset')}>
         <Text style={styles.continueButtonText}>Continue</Text>
       </TouchableOpacity>
     </View>

@@ -8,25 +8,25 @@ const AuthorProfile = () => {
       id: '1',
       title: 'The Da Vinci Code',
       price: '$19.99',
-      image: require("./src/assets/images/Frame44.png"),
-    },
+      image: require("../../../src/assests/images/Frame44.png"),
+       },
     {
       id: '2',
       title: 'Carrie Fisher',
       price: '$27.12',
-      image: require("./src/assets/images/Frame55.png"),
+      image: require("../../../src/assests/images/Frame55.png"),
     },
     {
       id: '3',
       title: 'Carrie Fisher',
       price: '$27.12',
-      image: require("./src/assets/images/Frame66.png"),
+      image: require("../../../src/assests/images/Frame66.png"),
     },
     {
       id: '4',
       title: 'Carrie Fisher',
       price: '$27.12',
-      image: require("./src/assets/images/Frame77.png"),
+      image: require("../../../src/assests/images/Frame77.png"),
     },
   ];
 
@@ -45,7 +45,7 @@ const AuthorProfile = () => {
       {/* Back Button */}
       <View style={styles.header}>
            <TouchableOpacity>
-                <Image source={require('./src/assets/images/arrow1.png')} style={{ width: 21, height: 21 }} />
+                <Image source={require('../../../src/assests/images/arrow1.png')} style={{ width: 21, height: 21 }} />
                 </TouchableOpacity>
                 <TouchableOpacity>
               <Text style={styles.title}>Authors</Text></TouchableOpacity>
@@ -57,7 +57,7 @@ const AuthorProfile = () => {
 
       {/* Author Information */}
       <View style={styles.authorSection}>
-        <Image style={styles.image} source={require('./src/assets/images/ventor2.png')} />
+        <Image style={styles.image} source={require('../../../src/assests/images/ventor2.png')} />
         <Text style={styles.authorRole}>Novelist</Text>
         <Text style={styles.authorName}>Tess Gunty</Text>
 
