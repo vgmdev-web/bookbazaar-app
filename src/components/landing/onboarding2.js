@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import Logo1 from '../assests/images/Frame11.png'
+
 const App = ({ navigation }) => {
   return (
     <View style={styles.container}>
     
-      <TouchableOpacity style={styles.skipButton}>
+      <TouchableOpacity style={styles.skipButton} onPress={() => navigation.replace('onboarding3')}>
         <Text style={styles.skipText}>Skip</Text>
       </TouchableOpacity>
 
       
       <View style={styles.mainContent}>
        
-<Image style={styles.image} source={require('../assests/images/Frame22.png')} />
+<Image style={styles.image} source={require('../../assests/images/Frame11.png')} />
 
 
         <Text style={styles.title}>Now reading books will be easier</Text>
@@ -25,7 +25,7 @@ const App = ({ navigation }) => {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.continueButton}
-          onPress={() => navigation.navigate('Onboarding2')}  // Navigate to Onboarding2 screen
+          onPress={() => navigation.replace('onboarding3')}  // Navigate to Onboarding2 screen
         >
           <Text style={styles.buttonText1}>Continue</Text>
         </TouchableOpacity>

@@ -1,23 +1,23 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-const App = () => {
+const onboarding4 = ({ navigation }) => {
   return (
     <View style={styles.container}>
-   
-      <TouchableOpacity style={styles.skipButton}>
-        <Text style={styles.skipText}>Skip</Text>
+      
+      <TouchableOpacity style={styles.skipButton} onPress={() => navigation.replace('onboarding3')}>
+        <Text style={styles.skipText} >Skip</Text>
       </TouchableOpacity>
 
- 
+      
       <View style={styles.mainContent}>
        
 
-<Image style={styles.image} source={require('../assests/images/Frame22.png')} />
+<Image style={styles.image} source={require('../../assests/images/Frame33.png')} />
 
-        <Text style={styles.title}>Your Bookish Soulmate Awaits</Text>
+        <Text style={styles.title}>Start Your Adventure</Text>
         <Text style={styles.description}>
-        Let us be your guide to the perfect read. Discover books tailored to your tastes for a truly rewarding experience.
+        Ready to embark on a quest for inspiration and knowledge? Your adventure begins now. Let's go!
         </Text>
       </View>
 
@@ -102,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default onboarding4;
